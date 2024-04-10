@@ -1,0 +1,11 @@
+Game Ideas:
+	plant growing - multiple spots, juggle taking care of them
+	spider-man - fast movement, momentum, spin with "rope"
+	healer - healer in the center with heroes around being attacked by zombies, heal shield buff heroes
+	weird movement platformer - move in a unconventional way insted of jumping (sword hoisting?)
+	
+Focus:
+	5-10 minute gameplay
+	intro/tutorial to explain the tools and objective
+	show/explain EVERYTHING, no hidden components
+	keep it simple, let everyone beat the game, maybe add different difficulty
