@@ -4,7 +4,7 @@
 
 
 
-if(mouse_check_button_pressed(mb_left))
+if(device_mouse_check_button_pressed(0, mb_left))
 {
 	with obj_summonable
 		selected = false;
@@ -18,7 +18,7 @@ if(mouse_check_button_pressed(mb_left))
 	inactivity = 0;
 }
 
-if(mouse_check_button_pressed(mb_right))
+if(device_mouse_check_button_pressed(0, mb_right))
 {
 	inactivity = 0;
 	obj_witch.image_index = 2;
@@ -55,11 +55,29 @@ if(mouse_check_button_pressed(mb_right))
 }
 
 inactivity += 1;
-if(inactivity >= inactivity_treshold)
-{
-	if(current_step < array_length(step_messages)-1)
-		current_step += 1;
-	inactivity = 0;
-}
+//if(inactivity >= inactivity_treshold)
+//{
+//	if(current_step < array_length(step_messages)-1)
+//		current_step += 1;
+//	inactivity = 0;
+//}
+
+// step advancement
+if(current_step < array_length(step_advancement)-1)
+	method_call(step_advancement[current_step],[]);
+
 if(keyboard_check_pressed(ord("N")))
 		current_step += 1;
+		
+if(current_step == 11 and not instance_exists(obj_criminal))
+{
+	var _criminal = instance_create_layer(pattern_sx+surface_get_width(pattern_surface)/2,
+		pattern_sy+surface_get_height(pattern_surface)/2, layer, obj_criminal);
+	_criminal.speed = 0.5+irandom(5)/10;
+}
+
+if(current_step == 13 and not instance_exists(obj_familiar))
+{
+	var _familiar = instance_create_layer(pattern_sx+surface_get_width(pattern_surface)/2,
+		pattern_sy+surface_get_height(pattern_surface)/2, layer, obj_familiar);
+}

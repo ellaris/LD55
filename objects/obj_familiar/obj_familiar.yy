@@ -1,20 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_criminal",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-  ],
+  "name": "obj_familiar",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "summonable",
-    "path": "folders/Objects/summonable.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
-  "parentObjectId": {
-    "name": "obj_summonable",
-    "path": "objects/obj_summonable/obj_summonable.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -31,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_criminal",
-    "path": "sprites/spr_criminal/spr_criminal.yy",
+    "name": "spr_familiar",
+    "path": "sprites/spr_familiar/spr_familiar.yy",
   },
   "spriteMaskId": null,
   "visible": true,

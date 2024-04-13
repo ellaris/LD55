@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_familiar",
-  "bbox_bottom": 14,
+  "name": "spr_red_herring",
+  "bbox_bottom": 10,
   "bbox_left": 0,
   "bbox_right": 15,
-  "bbox_top": 0,
+  "bbox_top": 3,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fc57dd62-11fa-4c15-b2bc-fb442f803be0",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"bde3d6af-2e7a-490a-aaaa-ca60f3d2545b",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 16,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d833e75d-6bbc-4ece-94db-8933090a37fa","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"063824dc-7f80-47cb-a336-ebe7612ee965","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_familiar",
+    "name": "spr_red_herring",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fc57dd62-11fa-4c15-b2bc-fb442f803be0","path":"sprites/spr_familiar/spr_familiar.yy",},},},"Disabled":false,"id":"c47336c1-eb85-41fd-8834-e208b0f9df51","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"bde3d6af-2e7a-490a-aaaa-ca60f3d2545b","path":"sprites/spr_red_herring/spr_red_herring.yy",},},},"Disabled":false,"id":"dd79e13a-295f-4afa-a3cb-a57a66f47427","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

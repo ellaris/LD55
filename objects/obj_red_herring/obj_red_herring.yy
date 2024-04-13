@@ -1,9 +1,8 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_credit_card",
+  "name": "obj_red_herring",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
@@ -32,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_credit_card",
-    "path": "sprites/spr_credit_card/spr_credit_card.yy",
+    "name": "spr_red_herring",
+    "path": "sprites/spr_red_herring/spr_red_herring.yy",
   },
   "spriteMaskId": null,
   "visible": true,

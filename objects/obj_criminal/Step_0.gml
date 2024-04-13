@@ -8,11 +8,8 @@
 // Inherit the parent event
 event_inherited();
 
-summon_dificulty = 1;
-
-bounce = 1-irandom(2);
-roll = 1-irandom(2);
-shadow_y = 32;
-target_shadow = 0;
-target_velocity = 0;
-friction = 0.025;
+if(speed != 0)
+{
+	if(place_meeting(x,y,obj_cage))
+		speed = 0;
+}

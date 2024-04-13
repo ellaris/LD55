@@ -19,6 +19,8 @@
     {"name":"inst_5AB2ED98","path":"rooms/rm_witch_hut/rm_witch_hut.yy",},
     {"name":"inst_A3E0499","path":"rooms/rm_witch_hut/rm_witch_hut.yy",},
     {"name":"inst_59051ADC","path":"rooms/rm_witch_hut/rm_witch_hut.yy",},
+    {"name":"inst_4BB718A","path":"rooms/rm_witch_hut/rm_witch_hut.yy",},
+    {"name":"inst_5266D5F4","path":"rooms/rm_witch_hut/rm_witch_hut.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -36,6 +38,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5AB2ED98","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_candle","path":"objects/obj_candle/obj_candle.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":252.0,"y":61.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A3E0499","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_candle","path":"objects/obj_candle/obj_candle.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":281.0,"y":59.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_59051ADC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cage","path":"objects/obj_cage/obj_cage.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":96.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4BB718A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_candle","path":"objects/obj_candle/obj_candle.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":198.0,"y":58.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5266D5F4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_candle","path":"objects/obj_candle/obj_candle.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":267.0,"y":62.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_745DB6A6","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":true,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_carpet","path":"sprites/spr_carpet/spr_carpet.yy",},"x":224.0,"y":224.0,},
