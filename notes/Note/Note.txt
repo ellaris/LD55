@@ -9,3 +9,33 @@ Focus:
 	intro/tutorial to explain the tools and objective
 	show/explain EVERYTHING, no hidden components
 	keep it simple, let everyone beat the game, maybe add different difficulty
+	
+music : https://www.beepbox.co
+sfx : sfxr - sound generator
+
+Theme: Summoning
+
+[] Customize a witch (hat, hair, outfit, colors)
+summon a familiar (cat, snake, raven, spider)
+Draw a summoning shape (triangle, circle, hexagon, pentagram)
+	[] check for similarity above 90% or redo it
+summon candles (above the fireplace) around it (doesn't matter where)
+	[] sometimes the candles fall sideways, summon them upright!
+summon 15 gold coins (pouch beside fireplace) inside it 
+	[](the coins can be finicky and summonning them 
+		the first time makes them bouncy or rolly, summon them back inside if they go outside)
+	[] you summon your credit card, you don't want to lose that, summon it back to your pocket!
+summon herbs (hanging above the fireplace) inside the shape
+summon fire to light the candles (from the fireplace)
+	[] the fire has principles, you have to say preety please before it answers your summons (click the witch)
+the summoning ritual takes 1 hour (transition)
+	[] because of the courthouse next door a criminal gets summoned first, summon him inside the cage (beside 
+	fireplace) before he escapes! (maybe the familiar does it if he gets too close outside)
+	
+	
+[] minigame with familiar, maou-sama summons an undead army, it has to use it's summoning abilities to
+	hold them back for 1 minute before the white wizard Randalf arrives with his riders
+	[] whenever and undead dies two more get summoned around the area
+	[] summon a falling meteor to wipe groups of undead
+	[] summon an explosion to wipe all skeletons
+	[] mana system, explosion 100%, meteor 10%, charge 5% per second
