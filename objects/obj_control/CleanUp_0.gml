@@ -4,3 +4,4 @@
 
 
 surface_free(pattern_surface);
+surface_free(surface_lighting);

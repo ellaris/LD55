@@ -6,6 +6,8 @@ if(room = rm_witch_hut)
 	var _remove_candles = 1+irandom(3);
 	var _remove_herbs = 1+irandom(2);
 	
+	recalculate_lighting();
+	
 	while(_remove_candles > 0)
 	{
 		with instance_find(obj_candle,irandom(instance_number(obj_candle)-1))
@@ -19,6 +21,12 @@ if(room = rm_witch_hut)
 			instance_destroy();
 		_remove_herbs--;
 	}
+}
+
+if(room == rm_arena)
+{
+	audio_stop_sound(music_track);
+	music_track = audio_play_sound(snd_music_battle,2,true);
 }
 
 if(is_mobile)

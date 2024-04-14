@@ -21,9 +21,12 @@ fall = function()
 		side_way = false;
 	
 	if(side_way)
-		image_angle = choose(90,180);
+		image_angle = choose(90,270);
 	else
 		image_angle  = 0;
+		
+	if(lit)
+		obj_control.recalculate_lighting();
 }
 
 teleport_callback = fall;

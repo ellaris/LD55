@@ -7,6 +7,7 @@ if(_candle)
 {
 	_candle.lit = true;
 	_candle.sprite_index = spr_candle_lit;
+	obj_control.recalculate_lighting();
 }
 
 instance_destroy();

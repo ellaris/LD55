@@ -60,6 +60,9 @@ step_messages = [
 "Maou-sama has summon an army of skeletons, your familiar needs to fend them of by summoning meteors (left click) or explosions (right click), you need to stall them for 1 minute until the white wizard Randalf gets here with his raiders, beware for whenever you defeat an enemy 2 more will be summoned in its place!"
 ]
 
+if( is_mobile)
+	step_messages[2] = "Good job, now lets summon those candles above the fire place into our sigil (click an object to select, double click to summon it to that position)"
+
 
 
 calculate_similarity = function(_surface_add, _surface_subtract)
@@ -198,7 +201,7 @@ step_light_candles = function(){
 }
 
 step_1h_wait = function(){
-	if(inactivity >= game_get_speed(gamespeed_fps)*5)
+	if(inactivity >= game_get_speed(gamespeed_fps)*6)
 		current_step++;
 }
 
@@ -208,7 +211,7 @@ step_criminal = function(){
 }
 
 step_courthouse_explanation = function(){
-	if(inactivity >= game_get_speed(gamespeed_fps)*7)
+	if(inactivity >= game_get_speed(gamespeed_fps)*10)
 	{
 		current_step++;
 		inactivity = 0;
@@ -216,7 +219,7 @@ step_courthouse_explanation = function(){
 }
 
 step_familiar_explanation = function(){
-	if(inactivity >= game_get_speed(gamespeed_fps)*8)
+	if(inactivity >= game_get_speed(gamespeed_fps)*7)
 	{
 		current_step++;
 		inactivity = 0;
@@ -224,7 +227,7 @@ step_familiar_explanation = function(){
 }
 
 step_minigame_explanation = function(){
-	if(inactivity >= game_get_speed(gamespeed_fps)*8)
+	if(inactivity >= game_get_speed(gamespeed_fps)*16)
 	{
 		current_step++;
 		inactivity = 0;
@@ -246,4 +249,13 @@ step_advancement = [
 	step_1h_wait,
 	step_criminal,
 	step_courthouse_explanation,
+	step_familiar_explanation,
+	step_minigame_explanation,
 ]
+
+surface_lighting = surface_create(view_get_wport(0), view_get_hport(0));
+
+music_track = audio_play_sound(snd_music_main,2,true)
+
+// particles
+

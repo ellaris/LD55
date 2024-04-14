@@ -12,3 +12,6 @@ ability_2_cd_max = game_get_speed(gamespeed_fps)*2;
 ability_2_cd = 0
 
 time = 0;
+
+image_speed = 0;
+image_index = irandom(image_number-1);
