@@ -1,6 +1,6 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
-
+audio_play_sound(snd_skeleton_die, 1, false);
 if(instance_number(obj_skeleton) < 1000)
 repeat 2
 {
@@ -9,5 +9,6 @@ repeat 2
 	var _yy = irandom(room_height)*(1-_horizontal) + (_horizontal)*room_height*irandom(1)
 
 	var _skeleton = instance_create_layer(_xx,_yy,layer,obj_skeleton);
+	
 }
 

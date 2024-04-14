@@ -51,6 +51,8 @@ if(room == rm_witch_hut)
 {
 	
 	
+	if(not surface_exists(pattern_surface))
+		pattern_surface = surface_create(128,128);
 	draw_surface(surface_lighting,0,0);
 	
 	// draw message
@@ -58,13 +60,19 @@ if(room == rm_witch_hut)
 	var _padding = 12;
 	var _mh = string_height_ext(_message,font_height,messagebox_width-_padding*2);
 	
+	draw_set_color(c_white);
+	if(inactivity_cap)
+	{
+		draw_rectangle(messagebox_x,messagebox_y-_padding,messagebox_x+messagebox_width*inactivity/inactivity_cap,messagebox_y-_padding*2,false)
+		draw_rectangle(messagebox_x,messagebox_y-_padding,messagebox_x+messagebox_width,messagebox_y-_padding*2,true)	
+	}
 	
 	draw_sprite_stretched(spr_messagebox,0,messagebox_x,messagebox_y,messagebox_width,_mh+_padding*2)
 	
 	draw_text_ext(messagebox_x+_padding,messagebox_y+_padding,_message,font_height,messagebox_width-_padding*2);
 	
 	//show_debug_message(string(view_get_wport(0)-128) + " " +string(view_get_hport(0)-64)+ " " + string(view_current))
-	if(draw_pattern)
+	if(draw_pattern and current_step == 1)
 	{
 		var _statx = view_get_wport(0)-128;
 		var _staty = view_get_hport(0)-64-16;
@@ -109,5 +117,25 @@ if(room == rm_witch_hut)
 		
 		//draw_text(_statx, _staty, string("Fullness: {0}%\nAccuracy: {1}%", round(pattern_fullness*100), round(pattern_score*100)));
 	}
+	
+	if(current_step == 4)
+	{
+		var _statx = view_get_wport(0)-128;
+		var _staty = view_get_hport(0)-64-16;
+		var _str = string("Gold coins: {0}/15",instance_number(obj_coin));
+		draw_text(_statx,_staty,_str);
+	}
 			
+}
+
+if(room == rm_arena)
+{
+	draw_set_color(c_aqua);
+	draw_text(32,32,string(obj_familiar.time div gm_speed));	
+}
+
+
+if(room == rm_customize)
+{
+	
 }

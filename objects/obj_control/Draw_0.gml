@@ -7,6 +7,8 @@
 if(room == rm_witch_hut)
 {
 	//draw_sprite(spr_carpet,0,pattern_sx,pattern_sy);
+	if(not surface_exists(pattern_surface))
+		pattern_surface = surface_create(128,128);
 	if(draw_pattern )
 	{
 		//draw_sprite_ext(spr_pattern,pattern_style,pattern_sx,pattern_sy,1,1,0,0,0.5);
@@ -46,18 +48,20 @@ if(room == rm_witch_hut)
 			
 				if(_fr >= 0.9 and _score >= 0.9)
 					draw_pattern = false;
-				if(_mr >= 0.2)
-				{
-					surface_set_target(pattern_surface);
-					draw_clear_alpha(c_black,0);
-					surface_reset_target();
-				}
+		}
+		
+		if(pattern_score < 0.9)
+		{
+			surface_set_target(pattern_surface);
+			draw_clear_alpha(c_black,0);
+			surface_reset_target();
+			draw_cd = gm_speed*2;
 		}
 	}
 	
 	//draw_surface(pattern_surface,pattern_sx,pattern_sy);
 	
-	if(mouse_check_button(mb_left))
+	if(mouse_check_button(mb_left) and not draw_cd)
 		if(draw_pattern and point_in_rectangle(mouse_x, mouse_y, pattern_sx, pattern_sy,
 			pattern_sx+surface_get_width(pattern_surface), pattern_sy+surface_get_height(pattern_surface)))
 		{

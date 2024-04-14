@@ -4,5 +4,5 @@
 
 draw_self()
 if(selected)
-	draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,true);
+	draw_rectangle(bbox_left-2,bbox_top-2,bbox_right+2,bbox_bottom+2,true);
 

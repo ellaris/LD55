@@ -21,12 +21,24 @@ if(room = rm_witch_hut)
 			instance_destroy();
 		_remove_herbs--;
 	}
+	
+	with obj_witch
+	{
+		hat_image = other.hat_image;
+		dress_image =  other.dress_image;
+		hair_image =  other.hair_image;
+
+		hat_color =  other.hat_color;
+		dress_color =  other.dress_color;
+		hair_color =  other.hair_color;	
+	}
 }
 
 if(room == rm_arena)
 {
 	audio_stop_sound(music_track);
-	music_track = audio_play_sound(snd_music_battle,2,true);
+	music_track = audio_play_sound(snd_music_battle,4,true);
+	draw_set_font(fnt_large);
 }
 
 if(is_mobile)

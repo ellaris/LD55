@@ -24,6 +24,11 @@ summon = function(_sx, _sy, _delay = summon_dificulty * game_get_speed(gamespeed
 	summon_x = _sx;
 	summon_y = _sy;
 	
+	audio_play_sound(snd_sigil,2,false);
+	
+	repeat sprite_width div 4
+		part_particles_create(obj_control.part_sys,x-sprite_width/2+irandom(sprite_width),bbox_bottom,obj_control.part_type_summon_magic,1);
+	
 }
 
 teleport = function()
@@ -32,6 +37,11 @@ teleport = function()
 	y = summon_y;
 	var _sigil = instance_create_layer(x,bbox_bottom,"Sigil",obj_summon_sigil);
 	summon_delay = noone;
+	
+	repeat sprite_width div 4
+		part_particles_create(obj_control.part_sys,x-sprite_width/2+irandom(sprite_width),bbox_bottom,obj_control.part_type_summon_magic,1);
+	
+	audio_play_sound(snd_summon,3,false);
 	
 	if(not is_undefined(teleport_callback))
 		method_call(teleport_callback,[]);

@@ -3,6 +3,8 @@
 
 if(room = rm_witch_hut)
 {
+	if(draw_cd > 0)
+		draw_cd--;
 	if(left_clicked)
 		left_click_timer += 1;
 
@@ -31,6 +33,7 @@ if(room = rm_witch_hut)
 			obj_witch.wand_image = 1;
 			obj_witch.rest = 0;
 			left_clicked = false;
+			audio_play_sound(snd_button_click,1,false);
 		}
 		inactivity = 0;
 	}
@@ -47,7 +50,7 @@ if(room = rm_witch_hut)
 	{
 		inactivity = 0;
 		obj_witch.wand_image = 2;
-		obj_witch.rest = game_get_speed(gamespeed_fps)*0.8;
+		obj_witch.rest = game_get_speed(gamespeed_fps)*0.3;
 	
 		var _s = noone;
 		with obj_summonable
@@ -55,6 +58,10 @@ if(room = rm_witch_hut)
 				_s = id;;
 		if(_s)
 		{
+			part_particles_create(part_sys,obj_witch.bbox_right,obj_witch.y,part_type_wand_magic,5);
+		
+			part_particles_create(part_sys,mouse_x,mouse_y,part_type_summon_magic,4);
+		
 			var _cancel = false;
 			var _unselect = true;
 			var _sigil_delay = 0
@@ -92,6 +99,7 @@ if(room = rm_witch_hut)
 		method_call(step_advancement[current_step],[]);
 
 	if(keyboard_check_pressed(ord("N")))
+		if(current_step < array_length(step_messages)-1)
 			current_step += 1;
 		
 	if(current_step == 11 and not instance_exists(obj_criminal))
@@ -99,11 +107,21 @@ if(room = rm_witch_hut)
 		var _criminal = instance_create_layer(pattern_sx+surface_get_width(pattern_surface)/2,
 			pattern_sy+surface_get_height(pattern_surface)/2, layer, obj_criminal);
 		_criminal.speed = 0.5+irandom(5)/10;
+		var _sigil = instance_create_layer(_criminal.x,_criminal.y,"Sigil",obj_summon_sigil);
+		_sigil.delay = 0;
+		_sigil.image_xscale = _criminal.sprite_width/_sigil.sprite_width;
+		_sigil.image_yscale = _criminal.sprite_width/_sigil.sprite_width;
+		audio_play_sound(snd_summon,1,false);
 	}
 
 	if(current_step == 13 and not instance_exists(obj_familiar))
 	{
 		var _familiar = instance_create_layer(pattern_sx+surface_get_width(pattern_surface)/2,
 			pattern_sy+surface_get_height(pattern_surface)/2, layer, obj_familiar);
+		var _sigil = instance_create_layer(_familiar.x,_familiar.y,"Sigil",obj_summon_sigil);
+		_sigil.delay = 0;
+		_sigil.image_xscale = _familiar.sprite_width/_sigil.sprite_width;
+		_sigil.image_yscale = _familiar.sprite_width/_sigil.sprite_width;
+		audio_play_sound(snd_summon,1,false);
 	}
 }

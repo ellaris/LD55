@@ -15,7 +15,7 @@ image_xscale = choose(1,-1);
 
 fall = function()
 {
-	if(irandom(2) == 0)
+	if(irandom(1) == 0 and not side_way)
 		side_way = true;
 	else
 		side_way = false;

@@ -19,6 +19,7 @@ summon_herring = function()
 		 _herring.friction = 0.025;
 		 _herring.speed = 1;
 		 _herring.direction = 270+irandom(20)-10;
+		 audio_play_sound(snd_coin_bounce, 2, false);
 	}
 }
 

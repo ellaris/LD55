@@ -21,6 +21,9 @@ if(life <= 0)
 		_dif = clamp(clamp(target_velocity,-abs(_dif),abs(_dif)),-3,3);
 		shadow_y += _dif;
 		y += -_dif;
+		
+		if(shadow_y == 0)
+			audio_play_sound(snd_coin_bounce, 3, false);
 	}
 	else
 	if(shadow_y == 0 and bounce)
@@ -29,6 +32,7 @@ if(life <= 0)
 		bounce = false;
 		speed = 1+irandom(20)/10;
 		direction = 90+20-irandom(40);
+		audio_play_sound(snd_coin_bounce, 3, false);
 	}
 	else
 	if(shadow_y == 0 and roll)
@@ -37,10 +41,14 @@ if(life <= 0)
 		var _angle = 10;
 		direction = 90+180*irandom(1)+_angle-irandom(_angle*2);
 		roll = false;
+		audio_play_sound(snd_coin_bounce, 3, false);
 	}
 	else
 	if(target_shadow != 0)
+	{
 		target_shadow = 0;
+		audio_play_sound(snd_coin_bounce, 2, false);
+	}
 	
 	var _dist = point_distance(x,y,obj_control.pattern_sx+surface_get_width(obj_control.pattern_surface)/2,obj_control.pattern_sy+surface_get_height(obj_control.pattern_surface)/2);
 	if(_dist > 64+24)

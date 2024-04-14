@@ -1,7 +1,7 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
 
-if(room = rm_arena)
+if(room = rm_arena and not dead)
 {
 	
 	time++;
@@ -13,8 +13,7 @@ if(room = rm_arena)
 			if( x < _t/game_get_speed(gamespeed_fps)*room_width)
 				instance_destroy(id,false);
 	}
-	if(time div game_get_speed(gamespeed_fps) >= 68)
-		game_restart();
+	
 		//room_goto(rm_main);
 
 	var _hkey = keyboard_check(ord("D"))-keyboard_check(ord("A"));
@@ -24,8 +23,11 @@ if(room = rm_arena)
 
 	if(_hkey != 0 or _vkey != 0)
 	{
-		x = x + lengthdir_x(1.5,_dir);
-		y = y + lengthdir_y(1.5,_dir);
+		x = x + lengthdir_x(1,_dir);
+		y = y + lengthdir_y(1,_dir);
+		if(_hkey != 0)
+			image_xscale = _hkey;
+		move++;
 	}
 	var _left = mouse_check_button_pressed(mb_left);
 	var _right = mouse_check_button_pressed(mb_right);
@@ -77,5 +79,16 @@ if(room = rm_arena)
 		ability_1_cd -= 1;
 	if(ability_2_cd > 0)
 		ability_2_cd -= 1;
+		
+	var _nearest_skeleton = instance_nearest(x,y,obj_skeleton);
+	if(_nearest_skeleton and point_distance(x,y,_nearest_skeleton.x,_nearest_skeleton.y) < sprite_width/3)
+	{
+		time = game_get_speed(gamespeed_fps)*60;
+		dead = true;
+	}
 	
 }
+if(time div game_get_speed(gamespeed_fps) >= 68)
+		game_restart();
+if(dead)
+	time++;
