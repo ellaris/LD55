@@ -100,7 +100,7 @@ if(room = rm_witch_hut)
 
 	if(keyboard_check_pressed(ord("N")))
 		if(current_step < array_length(step_messages)-1)
-			current_step += 1;
+			next_step();
 		
 	if(current_step == 11 and not instance_exists(obj_criminal))
 	{
@@ -125,3 +125,13 @@ if(room = rm_witch_hut)
 		audio_play_sound(snd_summon,1,false);
 	}
 }
+
+if(room == rm_main)
+	if(irandom(gm_speed) == 0)
+	{
+		var _witch = instance_create_layer(irandom(1)*room_width,32+irandom(room_height-64),"passby",obj_witch);
+		var _familiar = instance_create_layer(_witch.x + sign(_witch.x-room_width/2)*32,_witch.bbox_top+irandom(_witch.sprite_height),"passby",obj_familiar);
+		_familiar.hspeed = _witch.hspeed;
+		_familiar.image_xscale = sign(_familiar.hspeed);
+		_witch.image_xscale = sign(_familiar.hspeed);
+	}

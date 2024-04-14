@@ -2,7 +2,7 @@
 // W tym edytorze możesz zapisać swój kod
 
 
-draw_text(x,y+8,label+" "+string(value))
+draw_text(x,y+8,label+" "+string(round(value*100))+"%")
 
 draw_set_color(c_black);
 

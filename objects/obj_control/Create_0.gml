@@ -24,6 +24,8 @@ hat_color = array_shuffle(witch_palette)[0];
 dress_color = array_shuffle(witch_palette)[0];
 hair_color = array_shuffle(witch_palette)[0];
 
+familiar_image = 0;
+
 //list_music = [snd_music_battle,snd_music_main]
 //list_sound = [snd_button_click,snd_button_hover,snd_coin_bounce,snd_end,snd_fire,snd_meteor_hit,snd_meteor_summon,snd_sigil,snd_skeleton_die,snd_summon]
 
@@ -62,7 +64,7 @@ current_step = 0;
 summoned_herring = false;
 
 messagebox_width = 128*2;
-font_height = font_get_size(fnt_default)+5;
+font_height = font_get_size(fnt_default)+6;
 messagebox_x = view_get_wport(view_current)-messagebox_width-18; 
 messagebox_y = 0+32;
 inactivity = 0;
@@ -71,7 +73,7 @@ inactivity_treshold = game_get_speed(gamespeed_fps)*10;
 step_messages = [
 "Welcome young witch, you will be summoning a familial familiar, it's not just an ordinary familiar, it will become part of your family, so get ready (wait)",
 "First we will need to draw a summoning sigil, just start drawing (left click on the summoning carpet, follow the template outline, reach 90% fullness and keep your accuracy above 90%)",
-"Good job, now lets summon those candles above the fire place into our sigil (left click an object to select it, white outline, right click anywhere to summon the selected object to the mouse position)",
+"Good job, now lets get those candles which sit above the fire place, and summon them inside the drawn sigil (left click an object to select it with a white outline, right click anywhere to summon the selected object to the mouse position)",
 "Looks like some candles fell over, they do that sometimes, resummon them in correct position",
 "Great, the summoning requires 15 gold pieces as sacrifice, I believe you got those in the bag of yours",
 "Ah, those bouncy coins, it's harder to summon things you can't see, make sure they're all inside",
@@ -82,7 +84,7 @@ step_messages = [
 "Finally, the ritual requires 1 hour of casting, let's just cut to the end (wait)",
 "Oh, a criminal! quickly, summon him inside the cage!",
 "The court house is right next door, and their drawing ability is rather poor, so sometimes the crimilans get summoned here instead, but don't worry, your familiar is coming (wait)",
-"Wow, what a great familiar, you have betten the game! If you would care to take him out for a spin just (wait)",
+"Wow, what a great familiar, you have beatten the game! If you would care to take your familiar out for a spin just (wait)",
 "Maou-sama has summoned an army of skeletons, your familiar needs to fend them of by summoning meteors (left click) or their swarms (right click) (move with W S A D), you need to stall them for 1 minute until the white wizard Randalf gets here with his raiders, beware for whenever you defeat an enemy 2 more will be summoned in its place! (wait)"
 ]
 

@@ -3,6 +3,11 @@
 
 
 if(offset < 400)
+{
 	draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_black,1);
+	
+	if(irandom(2) == 0)
+		part_particles_create(obj_control.part_sys,x,y,obj_control.part_type_fire,1);
+}
 
 draw_sprite_ext(sprite_index,0,x-offset*angle,y-offset,1,1,0,c_white,1);

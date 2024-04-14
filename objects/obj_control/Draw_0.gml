@@ -74,3 +74,153 @@ if(room == rm_witch_hut)
 	
 	//draw_text(mouse_x,mouse_y,string(is_mobile))
 }
+
+if(room == rm_customize)
+{
+	var _ycenter = room_height/2;
+	var _xcenter = room_width/2;
+	var _xx = _xcenter-64;
+	var _yy = _ycenter-32;
+	
+	var _head_bop_offset = sin(current_time/(100/6)/game_get_speed(gamespeed_fps)*3);
+	var _size_pixel_ratio = 1/(sprite_get_bbox_bottom(spr_witch)- sprite_get_bbox_top(spr_witch));
+
+	draw_sprite_ext(spr_witch_head,0,_xx,_yy+abs(_head_bop_offset),1,1,0,c_white,1);
+	draw_sprite_ext(spr_witch_hair,hair_image,_xx,_yy+abs(_head_bop_offset),1,1,0,hair_color,1);
+	draw_sprite_ext(spr_witch_body,0,_xx,_yy,1,1,0,c_white,1);
+	draw_sprite_ext(spr_witch_dress,dress_image,_xx,_yy,1,1+_size_pixel_ratio*(0.5-_head_bop_offset),0,dress_color,1);
+	draw_sprite_ext(spr_witch_hat,hat_image,_xx,_yy+abs(_head_bop_offset),1,1,0,hat_color,1);
+
+	
+	_xx += 64;
+	_yy -= 32;
+	
+	var i = 0;
+	repeat 3
+	{
+		for(var j = 0; j < array_length(witch_palette); j++)
+		{
+			var _col = witch_palette[j]
+			draw_set_color(_col);
+			draw_rectangle(_xx,_yy,_xx+16,_yy+16,false);
+			if(mouse_check_button(mb_left) and point_in_rectangle(mouse_x,mouse_y,_xx,_yy,_xx+16,_yy+16))
+			{
+				
+				switch(i)
+				{
+					case 0:
+						hat_color = _col;
+						break;
+					case 1:
+						hair_color = _col;
+						break;
+					case 2:
+						dress_color = _col;
+						break;
+				}
+			}
+			_xx += 16;
+		}
+		
+		_xx = _xcenter-64+10+8;
+		draw_set_color(c_white);
+		if(point_in_rectangle(mouse_x,mouse_y, _xx,_yy+8-5,_xx+10,_yy+8+5))
+		{
+			draw_set_color(c_aqua);
+			if(mouse_check_button_pressed(mb_left))
+			switch(i)
+				{
+					case 0:
+						hat_image++;
+						break;
+					case 1:
+						hair_image++;
+						break;
+					case 2:
+						dress_image++;
+						break;
+				}
+		}
+		
+		draw_arrow(_xx,_yy+8,_xx+10,_yy+8,10);
+		
+		
+		_xx -= 32+16;
+		
+		draw_set_color(c_white);
+		if(point_in_rectangle(mouse_x,mouse_y, _xx-10,_yy+8-5,_xx,_yy+8+5))
+		{
+			draw_set_color(c_aqua);
+			if(mouse_check_button_pressed(mb_left))
+			switch(i)
+				{
+					case 0:
+						hat_image--;
+						break;
+					case 1:
+						hair_image--;
+						break;
+					case 2:
+						dress_image--;
+						break;
+				}
+		}
+		
+		draw_arrow(_xx,_yy+8,_xx-10,_yy+8,10);
+		
+		i++;
+		_yy += 32;
+		_xx = _xcenter;
+	}
+	
+	_xx -= 32+16;
+	_yy += 32;
+	
+	if(hat_image >= sprite_get_number(spr_witch_hat))
+		hat_image = 0
+	if(hat_image < 0)
+		hat_image = sprite_get_number(spr_witch_hat)-1;
+		
+	if(hair_image >= sprite_get_number(spr_witch_hair))
+		hair_image = 0
+	if(hair_image < 0)
+		hair_image = sprite_get_number(spr_witch_hair)-1;
+		
+	if(dress_image >= sprite_get_number(spr_witch_dress))
+		dress_image = 0
+	if(dress_image < 0)
+		dress_image = sprite_get_number(spr_witch_dress)-1;
+		
+		
+	draw_set_color(c_white);
+	if(point_in_rectangle(mouse_x,mouse_y, _xx,_yy+8-5,_xx+10,_yy+8+5))
+	{
+		draw_set_color(c_aqua);
+		if(mouse_check_button_pressed(mb_left))
+			familiar_image++;
+	}
+		
+	draw_arrow(_xx,_yy+8,_xx+10,_yy+8,10);
+		
+		
+	_xx -= 32+16;
+		
+	draw_set_color(c_white);
+	if(point_in_rectangle(mouse_x,mouse_y, _xx-10,_yy+8-5,_xx,_yy+8+5))
+	{
+		draw_set_color(c_aqua);
+		if(mouse_check_button_pressed(mb_left))
+			familiar_image--;
+	}
+		
+	draw_arrow(_xx,_yy+8,_xx-10,_yy+8,10);
+		
+	if(familiar_image >= sprite_get_number(spr_familiar))
+		familiar_image = 0
+	if(familiar_image < 0)
+		familiar_image = sprite_get_number(spr_familiar)-1;
+		
+	_xx += 32-8
+	
+	draw_sprite(spr_familiar,familiar_image,_xx,_yy);
+}

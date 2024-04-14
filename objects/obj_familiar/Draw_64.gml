@@ -8,7 +8,10 @@ if(time div game_get_speed(gamespeed_fps) > 60)
 	if(not sound)
 	{
 		sound = true;
-		audio_play_sound(snd_end,5,false);
+		audio_stop_sound(snd_skeleton_die);
+		audio_stop_sound(snd_meteor_summon);
+		audio_stop_sound(snd_meteor_hit);
+		audio_play_sound(snd_end,7,false);
 	}
 	
 	var _string = "You are VICTORIOUS !\nRandalf cleared out the hordes and now everyone is safe\nThank you for playing"

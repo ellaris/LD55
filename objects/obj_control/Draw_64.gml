@@ -137,5 +137,28 @@ if(room == rm_arena)
 
 if(room == rm_customize)
 {
+	var _xcenter= view_get_wport(0)/2;
+	var _ycenter  = view_get_hport(0)/2;
+	var _xx = _xcenter-128;
+	var _yy = _ycenter;
 	
+	//var _head_bop_offset = 1+sin(current_time/(100/6)/game_get_speed(gamespeed_fps)*3);
+	//var _size_pixel_ratio = 1/(sprite_get_bbox_bottom(spr_witch)- sprite_get_bbox_top(spr_witch));
+
+	//draw_sprite_ext(spr_witch_head,0,_xx,_yy+_head_bop_offset,1,1,0,c_white,1);
+	//draw_sprite_ext(spr_witch_hair,hair_image,_xx,_yy+_head_bop_offset,1,1,0,hair_color,1);
+	//draw_sprite_ext(spr_witch_body,0,_xx,_yy,1,1,0,c_white,1);
+	//draw_sprite_ext(spr_witch_dress,dress_image,_xx,_yy,1,1+_size_pixel_ratio*(0.5-_head_bop_offset),0,dress_color,1);
+	//draw_sprite_ext(spr_witch_hat,hat_image,_xx,_yy+_head_bop_offset,1,1,0,hat_color,1);
+
+	//_xx += 128;
+	//_yy -= 128;
+	
+	//var i = 0;
+	//repeat 3
+	//{
+		
+	//	i++;
+	//	_yy += 128;
+	//}
 }
