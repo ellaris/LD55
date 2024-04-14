@@ -11,7 +11,7 @@ if(room == rm_witch_hut)
 	{
 		draw_sprite_ext(spr_pattern,pattern_style,pattern_sx,pattern_sy,1,1,0,0,0.5);
 		var _refresh = current_time div 1000;
-		if(os_browser == browser_not_a_browser or _refresh > last_refresh)
+		if((os_browser == browser_not_a_browser or _refresh > last_refresh) and not is_mobile)
 		{
 			last_refresh = _refresh;
 			var _dps = surface_create(128,128);
@@ -68,5 +68,5 @@ if(room == rm_witch_hut)
 			
 		}
 	
-	
+	//draw_text(mouse_x,mouse_y,string(is_mobile))
 }

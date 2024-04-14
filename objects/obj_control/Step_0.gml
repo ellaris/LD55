@@ -2,23 +2,40 @@
 // W tym edytorze możesz zapisać swój kod
 
 
+if(left_clicked)
+	left_click_timer += 1;
 
+var _double_click = false;
 
 if(device_mouse_check_button_pressed(0, mb_left))
 {
-	with obj_summonable
-		selected = false;
+	if(left_clicked)
+		_double_click = true;
+	left_clicked = not left_clicked;
+	left_click_timer = 0;
+	
 	var _s = instance_position(mouse_x,mouse_y,obj_summonable);
 	if(_s)
 	{
+		with obj_summonable
+			selected = false;
 		_s.selected = true;
 		obj_witch.image_index = 1;
 		obj_witch.rest = 0;
+		left_clicked = false;
 	}
 	inactivity = 0;
 }
 
-if(device_mouse_check_button_pressed(0, mb_right))
+if( left_click_timer >= 30 and left_clicked)
+{
+	with obj_summonable
+		selected = false;
+	left_click_timer = 0
+	left_clicked = false;
+}
+
+if(device_mouse_check_button_pressed(0, mb_right) or _double_click)
 {
 	inactivity = 0;
 	obj_witch.image_index = 2;
@@ -63,7 +80,7 @@ inactivity += 1;
 //}
 
 // step advancement
-if(current_step < array_length(step_advancement)-1)
+if(current_step < array_length(step_advancement))
 	method_call(step_advancement[current_step],[]);
 
 if(keyboard_check_pressed(ord("N")))

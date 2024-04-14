@@ -22,6 +22,15 @@ pattern_fullness = 0;
 pattern_score = 0;
 
 last_refresh = 0;
+left_click_timer = 0;
+left_clicked = false;
+
+is_mobile = os_type == os_android;
+if(is_mobile)
+{
+	view_set_wport(0,480);
+	view_set_hport(0,260);
+}
 
 current_step = 0;
 
@@ -105,8 +114,12 @@ step_initial_explanation = function(){
 }
 
 step_draw_circle = function(){
-	if(pattern_fullness >= 0.9 and pattern_score >= 0.9)
+	if(pattern_fullness >= 0.9 and pattern_score >= 0.9 or is_mobile)
+	{
 		current_step++;
+		draw_pattern = false;
+		
+	}
 }
 
 step_summon_candles = function(){
@@ -196,7 +209,27 @@ step_criminal = function(){
 
 step_courthouse_explanation = function(){
 	if(inactivity >= game_get_speed(gamespeed_fps)*7)
+	{
 		current_step++;
+		inactivity = 0;
+	}
+}
+
+step_familiar_explanation = function(){
+	if(inactivity >= game_get_speed(gamespeed_fps)*8)
+	{
+		current_step++;
+		inactivity = 0;
+	}
+}
+
+step_minigame_explanation = function(){
+	if(inactivity >= game_get_speed(gamespeed_fps)*8)
+	{
+		current_step++;
+		inactivity = 0;
+		room_goto(rm_arena);
+	}
 }
 
 step_advancement = [

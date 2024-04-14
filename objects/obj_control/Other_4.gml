@@ -21,4 +21,8 @@ if(room = rm_witch_hut)
 	}
 }
 
-
+if(is_mobile)
+{
+	view_set_wport(0,500);
+	view_set_hport(0,150);
+}

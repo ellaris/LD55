@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_familiar",
+  "name": "obj_meteor",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_familiar",
-    "path": "sprites/spr_familiar/spr_familiar.yy",
+    "name": "spr_meteor",
+    "path": "sprites/spr_meteor/spr_meteor.yy",
   },
   "spriteMaskId": null,
   "visible": true,
